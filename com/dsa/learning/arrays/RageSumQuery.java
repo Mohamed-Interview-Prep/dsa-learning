@@ -1,6 +1,12 @@
 package com.dsa.learning.arrays;
 
 import com.dsa.learning.common.NumArray;
+import com.dsa.learning.common.NumArrayBruteForce;
+import com.dsa.learning.common.NumArrayStandard;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * https://leetcode.com/problems/range-sum-query-immutable/description/
@@ -42,14 +48,43 @@ public class RageSumQuery {
      * At most 104 calls will be made to sumRange
      */
     public static void main(String[] args) {
+        //Brute Force solution
+        int[] numsBruteForce = {-2, 0, 3, -5, 2, -1};
+        NumArrayBruteForce numArrayBruteForce = new NumArrayBruteForce(numsBruteForce);
+        List<Integer> resultsBruteForce = new ArrayList<>();
+        resultsBruteForce.addAll(Arrays.asList(
+                numArrayBruteForce.sumRange(0, 2),
+                numArrayBruteForce.sumRange(2, 5),
+                numArrayBruteForce.sumRange(0, 5)
+        ));
+        System.out.println("Brute Force Results: " + resultsBruteForce);
+
+
+        // Standard solution using prefix sum array
+        // Example usage
+        int[] numsStandard = {-2, 0, 3, -5, 2, -1};
+        NumArrayStandard numArrayStandard = new NumArrayStandard(numsStandard);
+        List<Integer> resultsStandard = new ArrayList<>();
+        resultsStandard.addAll(Arrays.asList(
+                numArrayStandard.sumRange(0, 2),
+                numArrayStandard.sumRange(2, 5),
+                numArrayStandard.sumRange(0, 5)
+        ));
+        System.out.println("Standard Results: " + resultsStandard);
+
+        // Most Optimized solution using prefix sum array
         // Example usage
         //[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
         int[] nums = {-2, 0, 3, -5, 2, -1};
         NumArray numArray = new NumArray(nums);
 
-        System.out.println(numArray.sumRange(0, 2));
-        System.out.println(numArray.sumRange(2, 5));
-        System.out.println(numArray.sumRange(0, 5));
+        List<Integer> results = new ArrayList<>();
+        results.addAll(Arrays.asList(
+                numArray.sumRange(0, 2),
+                numArray.sumRange(2, 5),
+                numArray.sumRange(0, 5)
+        ));
+        System.out.println("Results: " + results);
     }
 }
 
