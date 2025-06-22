@@ -1,8 +1,9 @@
-package com.dsa.learning.arrays;
+package com.dsa.learning.prefixSum.arrays;
 
-import com.dsa.learning.common.NumArray;
-import com.dsa.learning.common.NumArrayBruteForce;
-import com.dsa.learning.common.NumArrayStandard;
+
+import com.dsa.learning.prefixSum.arrays.common.NumArray;
+import com.dsa.learning.prefixSum.arrays.common.NumArrayBruteForce;
+import com.dsa.learning.prefixSum.arrays.common.NumArrayStandard;
 
 import java.util.ArrayList;
 import java.util.Arrays;
